@@ -25,6 +25,21 @@
 		57332EAE2D3C1578006A5669 /* DatabaseTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EAD2D3C1578006A5669 /* DatabaseTransaction.swift */; };
 		57332EB12D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EB02D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift */; };
 		57332EB32D3C1612006A5669 /* CoreDataSavePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EB22D3C1612006A5669 /* CoreDataSavePublisher.swift */; };
+		57332EB62D3C1970006A5669 /* UIContolPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EB52D3C1970006A5669 /* UIContolPublisher.swift */; };
+		57332EB82D3C19A3006A5669 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EB72D3C19A3006A5669 /* UITableViewCell.swift */; };
+		57332EBA2D3C19BF006A5669 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EB92D3C19BF006A5669 /* UITableView.swift */; };
+		57332EBC2D3C19E4006A5669 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EBB2D3C19E4006A5669 /* String.swift */; };
+		57332EBF2D3C1A12006A5669 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EBE2D3C1A12006A5669 /* HomeViewModel.swift */; };
+		57332EC22D3C1A41006A5669 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EC12D3C1A41006A5669 /* HomeViewController.swift */; };
+		57332EC52D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EC42D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift */; };
+		57332EC72D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EC62D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift */; };
+		57332EC92D3C1AAB006A5669 /* TransactionsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EC82D3C1AAB006A5669 /* TransactionsViewAction.swift */; };
+		57332ECC2D3C1AD2006A5669 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ECB2D3C1AD2006A5669 /* TransactionCell.swift */; };
+		57332ECF2D3C1B01006A5669 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ECE2D3C1B01006A5669 /* BalanceViewModel.swift */; };
+		57332ED12D3C1B61006A5669 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED02D3C1B61006A5669 /* BalanceView.swift */; };
+		57332ED42D3C1BC6006A5669 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED32D3C1BC6006A5669 /* Coordinator.swift */; };
+		57332ED62D3C1BDC006A5669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */; };
+		57332ED82D3C1BF6006A5669 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +82,21 @@
 		57332EAD2D3C1578006A5669 /* DatabaseTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTransaction.swift; sourceTree = "<group>"; };
 		57332EB02D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetchResultsPublisher.swift; sourceTree = "<group>"; };
 		57332EB22D3C1612006A5669 /* CoreDataSavePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSavePublisher.swift; sourceTree = "<group>"; };
+		57332EB52D3C1970006A5669 /* UIContolPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIContolPublisher.swift; sourceTree = "<group>"; };
+		57332EB72D3C19A3006A5669 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		57332EB92D3C19BF006A5669 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		57332EBB2D3C19E4006A5669 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		57332EBE2D3C1A12006A5669 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		57332EC12D3C1A41006A5669 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		57332EC42D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDiffableDataSourceSnapshot.swift; sourceTree = "<group>"; };
+		57332EC62D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDiffableTableDataSource.swift; sourceTree = "<group>"; };
+		57332EC82D3C1AAB006A5669 /* TransactionsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewAction.swift; sourceTree = "<group>"; };
+		57332ECB2D3C1AD2006A5669 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		57332ECE2D3C1B01006A5669 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		57332ED02D3C1B61006A5669 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		57332ED32D3C1BC6006A5669 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +175,9 @@
 		1CA3B6542D22B0F500176711 /* TransactionsTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				57332ED22D3C1BAF006A5669 /* Coordinators */,
+				57332EBD2D3C19F8006A5669 /* Screens */,
+				57332EB42D3C1955006A5669 /* Extenssions */,
 				57332EAF2D3C15D0006A5669 /* Publishers */,
 				57332EAA2D3C1556006A5669 /* Models */,
 				0DF1D13E2D22DC2D001626E7 /* Services */,
@@ -198,8 +231,84 @@
 			children = (
 				57332EB02D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift */,
 				57332EB22D3C1612006A5669 /* CoreDataSavePublisher.swift */,
+				57332EB52D3C1970006A5669 /* UIContolPublisher.swift */,
 			);
 			path = Publishers;
+			sourceTree = "<group>";
+		};
+		57332EB42D3C1955006A5669 /* Extenssions */ = {
+			isa = PBXGroup;
+			children = (
+				57332EB72D3C19A3006A5669 /* UITableViewCell.swift */,
+				57332EB92D3C19BF006A5669 /* UITableView.swift */,
+				57332EBB2D3C19E4006A5669 /* String.swift */,
+			);
+			path = Extenssions;
+			sourceTree = "<group>";
+		};
+		57332EBD2D3C19F8006A5669 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				57332EC02D3C1A35006A5669 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		57332EC02D3C1A35006A5669 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				57332ECA2D3C1AC8006A5669 /* Subviews */,
+				57332EC32D3C1A65006A5669 /* Helpers */,
+				57332EBE2D3C1A12006A5669 /* HomeViewModel.swift */,
+				57332EC12D3C1A41006A5669 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		57332EC32D3C1A65006A5669 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57332EC42D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift */,
+				57332EC62D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift */,
+				57332EC82D3C1AAB006A5669 /* TransactionsViewAction.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57332ECA2D3C1AC8006A5669 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				57332ECD2D3C1AEE006A5669 /* Balance */,
+				57332ECB2D3C1AD2006A5669 /* TransactionCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		57332ECD2D3C1AEE006A5669 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				57332ECE2D3C1B01006A5669 /* BalanceViewModel.swift */,
+				57332ED02D3C1B61006A5669 /* BalanceView.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		57332ED22D3C1BAF006A5669 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				57332ED92D3C1C22006A5669 /* Helpers */,
+				57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */,
+				57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		57332ED92D3C1C22006A5669 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57332ED32D3C1BC6006A5669 /* Coordinator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,20 +442,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57332EC92D3C1AAB006A5669 /* TransactionsViewAction.swift in Sources */,
+				57332EBF2D3C1A12006A5669 /* HomeViewModel.swift in Sources */,
 				57332EAC2D3C1567006A5669 /* Transaction.swift in Sources */,
+				57332EB82D3C19A3006A5669 /* UITableViewCell.swift in Sources */,
+				57332ED82D3C1BF6006A5669 /* HomeCoordinator.swift in Sources */,
+				57332EC72D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift in Sources */,
 				0D1540612D22EF5D00D6D63F /* AnalyticsEvent.swift in Sources */,
 				0DF1D1432D22DCD8001626E7 /* PerformOnce.swift in Sources */,
+				57332EB62D3C1970006A5669 /* UIContolPublisher.swift in Sources */,
+				57332ED42D3C1BC6006A5669 /* Coordinator.swift in Sources */,
 				0DF1D1452D22DD06001626E7 /* BitcoinRateService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
+				57332EC52D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift in Sources */,
 				57332EAE2D3C1578006A5669 /* DatabaseTransaction.swift in Sources */,
+				57332ECC2D3C1AD2006A5669 /* TransactionCell.swift in Sources */,
 				57332EB32D3C1612006A5669 /* CoreDataSavePublisher.swift in Sources */,
+				57332EBA2D3C19BF006A5669 /* UITableView.swift in Sources */,
+				57332EBC2D3C19E4006A5669 /* String.swift in Sources */,
 				57332EA92D3C153D006A5669 /* DatabaseService.swift in Sources */,
+				57332ED62D3C1BDC006A5669 /* AppCoordinator.swift in Sources */,
+				57332EC22D3C1A41006A5669 /* HomeViewController.swift in Sources */,
 				57332EB12D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift in Sources */,
 				1CA3B6602D22B0F500176711 /* TransactionsTestTask.xcdatamodeld in Sources */,
 				57332EA22D3C12B7006A5669 /* BitcoinRateResponce.swift in Sources */,
+				57332ECF2D3C1B01006A5669 /* BalanceViewModel.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
+				57332ED12D3C1B61006A5669 /* BalanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,13 @@
 //
 
 import UIKit
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var coordinator: AppCoordinator?
+    private var cancellables = Set<AnyCancellable>()
 
     func scene(
         _ scene: UIScene,
@@ -18,7 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        coordinator = AppCoordinator(window: window)
+        coordinator?.start(animated: false)
+            .sink(receiveValue: { _ in })
+            .store(in: &cancellables)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

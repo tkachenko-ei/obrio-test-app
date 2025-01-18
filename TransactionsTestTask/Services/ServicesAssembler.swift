@@ -41,4 +41,12 @@ enum ServicesAssembler {
         
         return { service }
     }()
+    
+    // MARK: - DatabaseService
+    
+    static let databaseService: PerformOnce<DatabaseService> = {
+        let service = DatabaseServiceImpl()
+        
+        return { service }
+    }()
 }
