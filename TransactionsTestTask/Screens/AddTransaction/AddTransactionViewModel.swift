@@ -16,13 +16,19 @@ final class AddTransactionViewModel {
     
     private let coordinator: AddTransactionCoordinator
     private let databaseService: DatabaseService
+    private let analyticsService: AnalyticsService
     private var cancellables = Set<AnyCancellable>()
     
     private let categories = Transaction.Category.allCases
     
-    init(coordinator: AddTransactionCoordinator, databaseService: DatabaseService) {
+    init(
+        coordinator: AddTransactionCoordinator,
+        databaseService: DatabaseService,
+        analyticsService: AnalyticsService
+    ) {
         self.coordinator = coordinator
         self.databaseService = databaseService
+        self.analyticsService = analyticsService
         
         setupSubscriptions()
     }
@@ -46,6 +52,21 @@ final class AddTransactionViewModel {
     }
     
     func addTranssactionButtonTapped() {
+        analyticsService.trackEvent(
+            name: "add_transaction_button_tapped",
+            parameters: [:]
+        )
+        
+        addTransaction()
+    }
+    
+    private func setupSubscriptions() {
+        $amount
+            .map { $0 > 0 }
+            .assign(to: &$addTranssactionButtonIsEnabled)
+    }
+    
+    func addTransaction() {
         let transaction = Transaction(
             amount: -amount,
             category: category,
@@ -58,16 +79,18 @@ final class AddTransactionViewModel {
                     return
                 }
                 self?.error = error
+                self?.analyticsService.trackEvent(
+                    name: "add_transaction_failure",
+                    parameters: ["error": error.localizedDescription]
+                )
             } receiveValue: { [weak self] in
                 self?.coordinator.coordinationResult.send(transaction)
+                self?.analyticsService.trackEvent(
+                    name: "add_transaction_success",
+                    parameters: [:]
+                )
             }
             .store(in: &cancellables)
-    }
-    
-    private func setupSubscriptions() {
-        $amount
-            .map { $0 > 0 }
-            .assign(to: &$addTranssactionButtonIsEnabled)
     }
 }
 

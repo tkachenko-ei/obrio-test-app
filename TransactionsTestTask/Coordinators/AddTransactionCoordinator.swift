@@ -13,6 +13,7 @@ final class AddTransactionCoordinator: Coordinator<Transaction> {
     let coordinationResult = PassthroughSubject<Transaction, Never>()
     
     private lazy var databaseService = ServicesAssembler.databaseService()
+    private lazy var analyticsService = ServicesAssembler.analyticsService()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,10 +22,12 @@ final class AddTransactionCoordinator: Coordinator<Transaction> {
     override func start(animated: Bool) -> AnyPublisher<Transaction, Never> {
         let viewModel = AddTransactionViewModel(
             coordinator: self,
-            databaseService: databaseService
+            databaseService: databaseService,
+            analyticsService: analyticsService
         )
         let viewController = AddTransactionViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: animated)
+        analyticsService.trackEvent(name: "open_add_transaction_screen", parameters: [:])
         return coordinationResult.eraseToAnyPublisher()
     }
 }
