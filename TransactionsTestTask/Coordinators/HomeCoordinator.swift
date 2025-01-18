@@ -29,21 +29,21 @@ final class HomeCoordinator: Coordinator<Void> {
             .eraseToAnyPublisher()
     }
     
-//    func navigateToAddTransaction() -> AnyPublisher<Transaction, Never> {
-//        let coordinator = AddTransactionCoordinator(navigationController: navigationController)
-//        return coordinate(to: coordinator)
-//            .handleEvents(receiveOutput: { [weak self] _ in
-//                self?.navigationController.popViewController(animated: true)
-//            })
-//            .eraseToAnyPublisher()
-//    }
-//    
-//    func navigateToAddBalance() -> AnyPublisher<Transaction, Never> {
-//        let coordinator = AddBalanceCoordinator(navigationController: navigationController)
-//        return coordinate(to: coordinator)
-//            .handleEvents(receiveOutput: { [weak self] _ in
-//                self?.navigationController.dismiss(animated: true)
-//            })
-//            .eraseToAnyPublisher()
-//    }
+    func navigateToAddTransaction() -> AnyPublisher<Transaction, Never> {
+        let coordinator = AddTransactionCoordinator(navigationController: navigationController)
+        return coordinate(to: coordinator)
+            .handleEvents(receiveOutput: { [weak self] _ in
+                self?.navigationController.popViewController(animated: true)
+            })
+            .eraseToAnyPublisher()
+    }
+    
+    func navigateToAddBalance() -> AnyPublisher<Transaction, Never> {
+        let coordinator = AddBalanceCoordinator(navigationController: navigationController)
+        return coordinate(to: coordinator)
+            .handleEvents(receiveOutput: { [weak self] _ in
+                self?.navigationController.dismiss(animated: true)
+            })
+            .eraseToAnyPublisher()
+    }
 }

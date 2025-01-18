@@ -66,59 +66,59 @@ final class HomeViewModel {
     }
     
     private func setupAddTransactionSubscription() {
-//        let publisher = balance.addTransactionTappedPublisher
-//            .flatMap { [unowned self] _ in
-//                self.coordinator.navigateToAddTransaction()
-//            }
-//            .share()
-//        
-//        publisher
-//            .sink { [weak self] _ in
-//                self?.balance.updateBitcoinBalance()
-//            }
-//            .store(in: &cancellables)
-//        
-//        publisher
-//            .compactMap { [weak self] transaction in
-//                guard
-//                    let components = self?.componentsForGroupingTransactions,
-//                    let date = Calendar.current.date(
-//                        from: Calendar.current.dateComponents(components, from: transaction.date)
-//                    )
-//                else { return nil }
-//                return TransactionSection(section: date, transaction: transaction)
-//            }
-//            .map { .showNewTransaction($0) }
-//            .subscribe(transactionsViewAction)
-//            .store(in: &cancellables)
+        let publisher = balance.addTransactionTappedPublisher
+            .flatMap { [unowned self] _ in
+                self.coordinator.navigateToAddTransaction()
+            }
+            .share()
+        
+        publisher
+            .sink { [weak self] _ in
+                self?.balance.updateBitcoinBalance()
+            }
+            .store(in: &cancellables)
+        
+        publisher
+            .compactMap { [weak self] transaction in
+                guard
+                    let components = self?.componentsForGroupingTransactions,
+                    let date = Calendar.current.date(
+                        from: Calendar.current.dateComponents(components, from: transaction.date)
+                    )
+                else { return nil }
+                return TransactionSection(section: date, transaction: transaction)
+            }
+            .map { .showNewTransaction($0) }
+            .subscribe(transactionsViewAction)
+            .store(in: &cancellables)
     }
     
     private func setupBitcoinBalanceReplenishSubscription() {
-//        let publisher = balance.bitcoinBalanceReplenishTappedPublisher
-//            .flatMap { [unowned self] _ in
-//                self.coordinator.navigateToAddBalance()
-//            }
-//            .share()
-//        
-//        publisher
-//            .sink { [weak self] _ in
-//                self?.balance.updateBitcoinBalance()
-//            }
-//            .store(in: &cancellables)
-//        
-//        publisher
-//            .compactMap { [weak self] transaction in
-//                guard
-//                    let components = self?.componentsForGroupingTransactions,
-//                    let date = Calendar.current.date(
-//                        from: Calendar.current.dateComponents(components, from: transaction.date)
-//                    )
-//                else { return nil }
-//                return TransactionSection(section: date, transaction: transaction)
-//            }
-//            .map { .showNewTransaction($0) }
-//            .subscribe(transactionsViewAction)
-//            .store(in: &cancellables)
+        let publisher = balance.bitcoinBalanceReplenishTappedPublisher
+            .flatMap { [unowned self] _ in
+                self.coordinator.navigateToAddBalance()
+            }
+            .share()
+        
+        publisher
+            .sink { [weak self] _ in
+                self?.balance.updateBitcoinBalance()
+            }
+            .store(in: &cancellables)
+        
+        publisher
+            .compactMap { [weak self] transaction in
+                guard
+                    let components = self?.componentsForGroupingTransactions,
+                    let date = Calendar.current.date(
+                        from: Calendar.current.dateComponents(components, from: transaction.date)
+                    )
+                else { return nil }
+                return TransactionSection(section: date, transaction: transaction)
+            }
+            .map { .showNewTransaction($0) }
+            .subscribe(transactionsViewAction)
+            .store(in: &cancellables)
     }
     
     private func fetchTransactions() -> AnyPublisher<[TransactionsSection], Error> {
@@ -131,7 +131,7 @@ final class HomeViewModel {
     }
     
     private func groupingTransactions(_ transactions: [Transaction]) -> [TransactionsSection] {
-        return transactions.reduce(into: [TransactionsSection]()) { sections, transaction in
+        transactions.reduce(into: [TransactionsSection]()) { sections, transaction in
             let currentTransactionComponents = Calendar.current.dateComponents(
                 componentsForGroupingTransactions,
                 from: transaction.date

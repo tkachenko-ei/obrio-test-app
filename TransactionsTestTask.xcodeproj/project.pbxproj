@@ -40,6 +40,14 @@
 		57332ED42D3C1BC6006A5669 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED32D3C1BC6006A5669 /* Coordinator.swift */; };
 		57332ED62D3C1BDC006A5669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */; };
 		57332ED82D3C1BF6006A5669 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */; };
+		57332EDC2D3C1F64006A5669 /* UIDoubleField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EDB2D3C1F64006A5669 /* UIDoubleField.swift */; };
+		57332EDE2D3C1F8A006A5669 /* UIPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EDD2D3C1F8A006A5669 /* UIPaddedTextField.swift */; };
+		57332EE22D3C2018006A5669 /* AddBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EE12D3C2018006A5669 /* AddBalanceViewModel.swift */; };
+		57332EE42D3C2039006A5669 /* AddBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EE32D3C2039006A5669 /* AddBalanceViewController.swift */; };
+		57332EE62D3C2055006A5669 /* AddBalanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EE52D3C2055006A5669 /* AddBalanceCoordinator.swift */; };
+		57332EE82D3C206E006A5669 /* AddTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EE72D3C206E006A5669 /* AddTransactionCoordinator.swift */; };
+		57332EEA2D3C20B3006A5669 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EE92D3C20B3006A5669 /* AddTransactionViewModel.swift */; };
+		57332EEC2D3C20CA006A5669 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57332EEB2D3C20CA006A5669 /* AddTransactionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +105,14 @@
 		57332ED32D3C1BC6006A5669 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		57332EDB2D3C1F64006A5669 /* UIDoubleField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDoubleField.swift; sourceTree = "<group>"; };
+		57332EDD2D3C1F8A006A5669 /* UIPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPaddedTextField.swift; sourceTree = "<group>"; };
+		57332EE12D3C2018006A5669 /* AddBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceViewModel.swift; sourceTree = "<group>"; };
+		57332EE32D3C2039006A5669 /* AddBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceViewController.swift; sourceTree = "<group>"; };
+		57332EE52D3C2055006A5669 /* AddBalanceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceCoordinator.swift; sourceTree = "<group>"; };
+		57332EE72D3C206E006A5669 /* AddTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCoordinator.swift; sourceTree = "<group>"; };
+		57332EE92D3C20B3006A5669 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
+		57332EEB2D3C20CA006A5669 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +193,7 @@
 			children = (
 				57332ED22D3C1BAF006A5669 /* Coordinators */,
 				57332EBD2D3C19F8006A5669 /* Screens */,
+				57332EDA2D3C1F50006A5669 /* CustomViews */,
 				57332EB42D3C1955006A5669 /* Extenssions */,
 				57332EAF2D3C15D0006A5669 /* Publishers */,
 				57332EAA2D3C1556006A5669 /* Models */,
@@ -250,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				57332EC02D3C1A35006A5669 /* Home */,
+				57332EDF2D3C1FF1006A5669 /* AddBalance */,
+				57332EE02D3C2000006A5669 /* AddTransaction */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -299,6 +318,8 @@
 				57332ED92D3C1C22006A5669 /* Helpers */,
 				57332ED52D3C1BDC006A5669 /* AppCoordinator.swift */,
 				57332ED72D3C1BF6006A5669 /* HomeCoordinator.swift */,
+				57332EE52D3C2055006A5669 /* AddBalanceCoordinator.swift */,
+				57332EE72D3C206E006A5669 /* AddTransactionCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -309,6 +330,33 @@
 				57332ED32D3C1BC6006A5669 /* Coordinator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57332EDA2D3C1F50006A5669 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				57332EDB2D3C1F64006A5669 /* UIDoubleField.swift */,
+				57332EDD2D3C1F8A006A5669 /* UIPaddedTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		57332EDF2D3C1FF1006A5669 /* AddBalance */ = {
+			isa = PBXGroup;
+			children = (
+				57332EE12D3C2018006A5669 /* AddBalanceViewModel.swift */,
+				57332EE32D3C2039006A5669 /* AddBalanceViewController.swift */,
+			);
+			path = AddBalance;
+			sourceTree = "<group>";
+		};
+		57332EE02D3C2000006A5669 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				57332EE92D3C20B3006A5669 /* AddTransactionViewModel.swift */,
+				57332EEB2D3C20CA006A5669 /* AddTransactionViewController.swift */,
+			);
+			path = AddTransaction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,19 +491,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				57332EC92D3C1AAB006A5669 /* TransactionsViewAction.swift in Sources */,
+				57332EEC2D3C20CA006A5669 /* AddTransactionViewController.swift in Sources */,
 				57332EBF2D3C1A12006A5669 /* HomeViewModel.swift in Sources */,
 				57332EAC2D3C1567006A5669 /* Transaction.swift in Sources */,
 				57332EB82D3C19A3006A5669 /* UITableViewCell.swift in Sources */,
 				57332ED82D3C1BF6006A5669 /* HomeCoordinator.swift in Sources */,
 				57332EC72D3C1A8A006A5669 /* TransactionsDiffableTableDataSource.swift in Sources */,
 				0D1540612D22EF5D00D6D63F /* AnalyticsEvent.swift in Sources */,
+				57332EDC2D3C1F64006A5669 /* UIDoubleField.swift in Sources */,
+				57332EE42D3C2039006A5669 /* AddBalanceViewController.swift in Sources */,
 				0DF1D1432D22DCD8001626E7 /* PerformOnce.swift in Sources */,
 				57332EB62D3C1970006A5669 /* UIContolPublisher.swift in Sources */,
+				57332EE82D3C206E006A5669 /* AddTransactionCoordinator.swift in Sources */,
 				57332ED42D3C1BC6006A5669 /* Coordinator.swift in Sources */,
 				0DF1D1452D22DD06001626E7 /* BitcoinRateService.swift in Sources */,
 				0DF1D1472D22DD4A001626E7 /* AnalyticsService.swift in Sources */,
 				1CA3B6562D22B0F500176711 /* AppDelegate.swift in Sources */,
+				57332EE62D3C2055006A5669 /* AddBalanceCoordinator.swift in Sources */,
 				1CA3B6582D22B0F500176711 /* SceneDelegate.swift in Sources */,
+				57332EE22D3C2018006A5669 /* AddBalanceViewModel.swift in Sources */,
 				57332EC52D3C1A6F006A5669 /* TransactionsDiffableDataSourceSnapshot.swift in Sources */,
 				57332EAE2D3C1578006A5669 /* DatabaseTransaction.swift in Sources */,
 				57332ECC2D3C1AD2006A5669 /* TransactionCell.swift in Sources */,
@@ -468,7 +522,9 @@
 				57332EB12D3C15E9006A5669 /* CoreDataFetchResultsPublisher.swift in Sources */,
 				1CA3B6602D22B0F500176711 /* TransactionsTestTask.xcdatamodeld in Sources */,
 				57332EA22D3C12B7006A5669 /* BitcoinRateResponce.swift in Sources */,
+				57332EEA2D3C20B3006A5669 /* AddTransactionViewModel.swift in Sources */,
 				57332ECF2D3C1B01006A5669 /* BalanceViewModel.swift in Sources */,
+				57332EDE2D3C1F8A006A5669 /* UIPaddedTextField.swift in Sources */,
 				0DF1D1402D22DC51001626E7 /* ServicesAssembler.swift in Sources */,
 				57332ED12D3C1B61006A5669 /* BalanceView.swift in Sources */,
 			);
