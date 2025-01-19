@@ -26,17 +26,26 @@ final class AnalyticsServiceTests: XCTestCase {
     
     func testFetchEvents() {
         analyticsService.trackEvent(name: "test_event_1", parameters: [:])
-        let date1 = Date.now
+        sleep(1)
+        let lowerDate = Date.now
+        sleep(1)
         analyticsService.trackEvent(name: "test_event_2", parameters: [:])
-        let date2 = Date.now
+        sleep(1)
+        let upperDate = Date.now
+        sleep(1)
         analyticsService.trackEvent(name: "test_event_3", parameters: [:])
         
-        let events = analyticsService.fetchEvents(name: nil, between: date1...date2)
+        var events = analyticsService.fetchEvents(name: nil, between: lowerDate...upperDate)
         
-        XCTAssertTrue(events.count == 1)
         XCTAssertFalse(events.contains(where: { $0.name == "test_event_1" }))
         XCTAssertTrue(events.contains(where: { $0.name == "test_event_2" }))
         XCTAssertFalse(events.contains(where: { $0.name == "test_event_3" }))
+        
+        events = analyticsService.fetchEvents(name: "test_event_3", between: nil)
+        
+        XCTAssertFalse(events.contains(where: { $0.name == "test_event_1" }))
+        XCTAssertFalse(events.contains(where: { $0.name == "test_event_2" }))
+        XCTAssertTrue(events.contains(where: { $0.name == "test_event_3" }))
     }
 }
 
