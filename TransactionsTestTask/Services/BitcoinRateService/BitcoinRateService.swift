@@ -10,16 +10,12 @@ import Combine
 protocol BitcoinRateService: AnyObject {
     var rateUpdated: AnyPublisher<Double, Error> { get }
     
-    var cancellables: Set<AnyCancellable> { get set }
-    
     func updateRate() -> AnyCancellable
     func updateRate(every interval: TimeInterval) -> AnyCancellable
 }
 
 final class BitcoinRateServiceImpl {
     private let rateUpdatedSubject = PassthroughSubject<Double, Error>()
-    
-    lazy var cancellables = Set<AnyCancellable>()
     
     init() {}
     

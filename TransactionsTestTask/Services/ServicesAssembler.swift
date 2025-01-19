@@ -4,49 +4,70 @@
 //
 //
 
-enum ServicesAssembler {
-    
-    // MARK: - BitcoinRateService
-    
-    static let bitcoinRateService: PerformOnce<BitcoinRateService> = {
-        lazy var analyticsService = Self.analyticsService()
-        
-        let service = BitcoinRateServiceImpl()
-        
-        service.rateUpdated
-            .sink(receiveCompletion: { completion in
-                guard case let .failure(error) = completion else {
-                    return
-                }
+import Combine
 
-                analyticsService.trackEvent(
-                    name: "bitcoin_rate_update_error",
-                    parameters: ["error": error.localizedDescription]
-                )
-            }, receiveValue: { rate in
-                analyticsService.trackEvent(
-                    name: "bitcoin_rate_update",
-                    parameters: ["rate": String(format: "%.2f", rate)]
-                )
-            })
-            .store(in: &service.cancellables)
-        
-        return { service }
-    }()
+final class ServicesAssembler {
     
-    // MARK: - AnalyticsService
+    static let shared = ServicesAssembler()
     
-    static let analyticsService: PerformOnce<AnalyticsService> = {
-        let service = AnalyticsServiceImpl()
-        
-        return { service }
-    }()
+    private var registry = [String: () -> Any]()
+    private var singletons = [String: Any]()
     
-    // MARK: - DatabaseService
+    private var cancellables = Set<AnyCancellable>()
     
-    static let databaseService: PerformOnce<DatabaseService> = {
-        let service = DatabaseServiceImpl()
-        
-        return { service }
-    }()
+    private init() {
+        register(DatabaseService.self) { DatabaseServiceImpl() }
+        registerSingleton(AnalyticsService.self) { AnalyticsServiceImpl() }
+        registerSingleton(BitcoinRateService.self) { [unowned self] in
+            let analyticsService = resolve(AnalyticsService.self)
+            
+            let bitcoinRateService = BitcoinRateServiceImpl()
+            bitcoinRateService.rateUpdated
+                .sink(receiveCompletion: { completion in
+                    guard case let .failure(error) = completion else {
+                        return
+                    }
+                    
+                    analyticsService.trackEvent(
+                        name: "bitcoin_rate_update_error",
+                        parameters: ["error": error.localizedDescription]
+                    )
+                }, receiveValue: { rate in
+                    analyticsService.trackEvent(
+                        name: "bitcoin_rate_update",
+                        parameters: ["rate": String(format: "%.2f", rate)]
+                    )
+                })
+                .store(in: &self.cancellables)
+            return bitcoinRateService
+        }
+    }
+
+    func register<T>(_ type: T.Type, factory: @escaping () -> T) {
+        let key = String(describing: type)
+        registry[key] = factory
+    }
+    
+    func registerSingleton<T>(_ type: T.Type, factory: @escaping () -> T) {
+        let key = String(describing: type)
+        var instance: T?
+        registry[key] = {
+            if instance == nil {
+                instance = factory()
+            }
+            return instance!
+        }
+    }
+    
+    func resolve<T>(_ type: T.Type) -> T {
+        let key = String(describing: type)
+        if let instance = singletons[key] as? T {
+            return instance
+        } else if let factory = registry[key]?() as? T {
+            singletons[key] = factory
+            return factory
+        } else {
+            fatalError("No registered entry for \(T.self)")
+        }
+    }
 }

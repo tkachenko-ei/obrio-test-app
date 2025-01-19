@@ -12,17 +12,16 @@ final class AddBalanceCoordinator: Coordinator<Transaction> {
     
     let coordinationResult = PassthroughSubject<Transaction, Never>()
     
-    private lazy var databaseService = ServicesAssembler.databaseService()
-    private lazy var analyticsService = ServicesAssembler.analyticsService()
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     override func start(animated: Bool) -> AnyPublisher<Transaction, Never> {
+        let databaseService = ServicesAssembler.shared.resolve(DatabaseService.self)
+        let analyticsService = ServicesAssembler.shared.resolve(AnalyticsService.self)
         let viewModel = AddBalanceViewModel(
             coordinator: self,
-            databaseService: databaseService, 
+            databaseService: databaseService,
             analyticsService: analyticsService
         )
         let viewController = AddBalanceViewController(viewModel: viewModel)

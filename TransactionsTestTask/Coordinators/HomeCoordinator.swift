@@ -10,14 +10,13 @@ import Combine
 final class HomeCoordinator: Coordinator<Void> {
     unowned let navigationController: UINavigationController
     
-    private lazy var databaseService = ServicesAssembler.databaseService()
-    private lazy var bitcoinRateService = ServicesAssembler.bitcoinRateService()
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     override func start(animated: Bool) -> AnyPublisher<Void, Never> {
+        let databaseService = ServicesAssembler.shared.resolve(DatabaseService.self)
+        let bitcoinRateService = ServicesAssembler.shared.resolve(BitcoinRateService.self)
         let viewModel = HomeViewModel(
             coordinator: self,
             databaseService: databaseService,
